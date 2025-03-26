@@ -11,28 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const ul = document.getElementById("subservice-options");
         subservicesList[serviceType].forEach(subservice => {
             const li = document.createElement("li");
-            li.innerHTML = `<a href="#" onclick="requestLocation('${subservice}')">${subservice}</a>`;
+            li.innerHTML = `<a href="#" onclick="callServiceProvider('${subservice}')">${subservice}</a>`;
             ul.appendChild(li);
         });
     }
 });
 
-function requestLocation(service) {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            let phoneNumber = "+917842861489"; // Example contact
-            let message = `I need ${service} service at my location.`;
-            let callUrl = `tel:${phoneNumber}`;
-            let messageUrl = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
-            
-            let options = confirm("Select an option:\nOK to Call\nCancel to Message");
-            if (options) {
-                window.location.href = callUrl;
-            } else {
-                window.location.href = messageUrl;
-            }
-        });
-    } else {
-        alert("Geolocation is not supported by your browser.");
-    }
+// Call service provider directly
+function callServiceProvider(service) {
+    const phoneNumber = "+7842861489"; // Direct contact number
+    const callUrl = `tel:${phoneNumber}`;
+    window.location.href = callUrl; // Directly initiate the call
 }

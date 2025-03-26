@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Call service provider directly
 function callServiceProvider(service) {
-    const phoneNumber = "+7842861489"; // Direct contact number
+    const phoneNumber = "+917842861489"; // Direct contact number
     const callUrl = `tel:${phoneNumber}`;
     window.location.href = callUrl; // Directly initiate the call
 }

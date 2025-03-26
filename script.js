@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function requestLocation(service) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
-            let phoneNumber = "+918106724038"; // Example contact
+            let phoneNumber = "+918106724308"; // Example contact
             let message = `I need ${service} service at my location.`;
             let callUrl = `tel:${phoneNumber}`;
             let messageUrl = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
